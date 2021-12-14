@@ -1,6 +1,6 @@
 # BadJokes
 
-- `npx react-native run-ios`
+`npx react-native run-ios`
 
 ## OR
 
