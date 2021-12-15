@@ -36,14 +36,11 @@ const Fetch: React.FC = () => {
       {isLoading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
-        <Text
-          style={{
+        <Text style={{
             fontSize: 36,
             fontFamily: 'Palanquin-SemiBold',
             color: colours.accent
-          }}>
-          {data?.jokes[0]}
-        </Text>
+          }}>{data && data.jokes ? data.jokes[0] : 'No jokes :('}</Text>
       )}
     </View>
   )
