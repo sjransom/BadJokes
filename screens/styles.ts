@@ -15,9 +15,10 @@ export const styles = StyleSheet.create({
   jokeWrapper: {
     marginBottom: 50
   },
-  nextButton: {
+  button: {
     backgroundColor: colours.secondary,
-    borderRadius: 25
+    borderRadius: 25,
+    marginVertical: 10
   },
   buttonText: {
     color: colours.primary,
@@ -25,5 +26,21 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Palanquin-SemiBold',
     paddingVertical: 8
+  },
+  welcomeImageWrapper: {
+    alignItems: 'center',
+    marginTop: 100
+  },
+  appNameWrapper: {
+    alignItems: 'center',
+    marginTop: 50
+  },
+  appNameText: {
+    fontFamily: 'Palanquin-Bold',
+    fontSize: 48,
+    color: colours.primary
+  },
+  actionsWrapper: {
+    marginTop: 150
   }
 })
