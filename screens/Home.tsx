@@ -1,19 +1,42 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, View, Text } from 'react-native'
+import { SafeAreaView, View, Text, Pressable } from 'react-native'
 
 import { styles } from './styles'
 import FetchData from '../components/FetchData'
+import colours from '../assets/colours'
+// import Feather from 'react-native-vector-icons/Feather'
+
+// Feather.loadFont()
 
 export const Home = () => {
   return (
-    <SafeAreaView>
-      <ScrollView contentContainerStyle={styles.container}>
-        <View>
-          <Text>Home</Text>
-          <FetchData />
+    <View style={styles.container}>
+      {/* Header */}
+      <SafeAreaView>
+        <View style={styles.headerWrapper}>
+          {/* <Feather name="heart" size={24} /> */}
+          <Text>Header</Text>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+
+      {/* Joke */}
+      <View>
+        <FetchData />
+      </View>
+
+      {/* Actions */}
+      <View>
+        <Pressable
+          style={({ pressed }) => [
+            styles.nextButton,
+            {
+              backgroundColor: pressed ? colours.accent : colours.secondary
+            }
+          ]}>
+          <Text style={styles.buttonText}>Generate Next</Text>
+        </Pressable>
+      </View>
+    </View>
   )
 }
 

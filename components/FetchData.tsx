@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { ActivityIndicator, Text, View } from 'react-native'
+import colours from '../assets/colours'
 
 type Data = {
   jokes: [string]
@@ -35,7 +36,14 @@ const Fetch: React.FC = () => {
       {isLoading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
-        <Text>{data?.jokes[0]}</Text>
+        <Text
+          style={{
+            fontSize: 36,
+            fontFamily: 'Palanquin-SemiBold',
+            color: colours.accent
+          }}>
+          {data?.jokes[0]}
+        </Text>
       )}
     </View>
   )
