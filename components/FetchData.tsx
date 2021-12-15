@@ -35,7 +35,7 @@ const Fetch: React.FC = () => {
       {isLoading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
-        <Text>{data?.jokes[0]}</Text>
+        <Text>{data && data.jokes ? data.jokes[0] : 'No jokes :('}</Text>
       )}
     </View>
   )
