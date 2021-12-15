@@ -1,27 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView, View, Text, Pressable } from 'react-native'
 
 import { styles } from './styles'
 import FetchData from '../components/FetchData'
 import colours from '../assets/colours'
-// import Feather from 'react-native-vector-icons/Feather'
+import Icon from 'react-native-vector-icons/Ionicons'
 
-// Feather.loadFont()
+Icon.loadFont()
 
 export const Home = () => {
+  const [like, setLike] = useState(false)
+
   return (
     <View style={styles.container}>
       {/* Header */}
       <SafeAreaView>
         <View style={styles.headerWrapper}>
-          {/* <Feather name="heart" size={24} /> */}
-          <Text>Header</Text>
+          <Icon name="star" size={52} color={colours.secondary} />
         </View>
       </SafeAreaView>
 
       {/* Joke */}
-      <View>
+      <View style={styles.jokeWrapper}>
         <FetchData />
+        <Pressable
+          onPress={() => {
+            setLike(!like)
+          }}>
+          <Icon
+            name={like ? 'star' : 'star-outline'}
+            size={36}
+            color={colours.secondary}
+          />
+        </Pressable>
       </View>
 
       {/* Actions */}

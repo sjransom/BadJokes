@@ -12,6 +12,9 @@ export const styles = StyleSheet.create({
   headerWrapper: {
     paddingTop: 20
   },
+  jokeWrapper: {
+    marginBottom: 50
+  },
   nextButton: {
     backgroundColor: colours.secondary,
     borderRadius: 25
