@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import { SafeAreaView, View, Text, Pressable } from 'react-native'
 
 import { styles } from './styles'
@@ -8,8 +8,36 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 Icon.loadFont()
 
-export const Home = ({ navigation }) => {
+export type Data = {
+  jokes: [string]
+}
+
+export const Home = ({ navigation }: any) => {
   const [like, setLike] = useState(false)
+  const [isLoading, setLoading] = useState<boolean>(true)
+  const [data, setData] = useState<Data>()
+
+  const getMovies = async () => {
+    try {
+      const response = await fetch(
+        'https://z2aeyohis1.execute-api.eu-west-1.amazonaws.com/default/jokes'
+      )
+      const jokes = await response.json()
+      setData(jokes)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getMovies()
+  }, [])
+
+  const onPressGenerate = useCallback(() => {
+    getMovies()
+  }, [])
 
   return (
     <View style={styles.container}>
@@ -28,7 +56,7 @@ export const Home = ({ navigation }) => {
 
       {/* Joke */}
       <View style={styles.jokeWrapper}>
-        <FetchData />
+        <FetchData data={data} isLoading={isLoading} />
         <Pressable
           onPress={() => {
             setLike(!like)
@@ -44,6 +72,7 @@ export const Home = ({ navigation }) => {
       {/* Actions */}
       <View>
         <Pressable
+          onPress={onPressGenerate}
           style={({ pressed }) => [
             styles.button,
             {

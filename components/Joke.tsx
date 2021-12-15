@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import colours from '../assets/colours'
 
-export const Joke = ({ text }) => {
+export const Joke = ({ text }: any) => {
   console.log('text', text)
   return (
     <View style={styles.jokeWrapper}>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   jokeText: {
     color: colours.primary,
-    fontFamily: 'Palenquin-Regular',
+    fontFamily: 'Palanquin-Regular',
     fontSize: 20
   }
 })
