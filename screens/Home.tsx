@@ -39,7 +39,7 @@ export const Home = () => {
       <View>
         <Pressable
           style={({ pressed }) => [
-            styles.nextButton,
+            styles.button,
             {
               backgroundColor: pressed ? colours.accent : colours.secondary
             }
