@@ -10,7 +10,10 @@ export const styles = StyleSheet.create({
     backgroundColor: colours.primary
   },
   headerWrapper: {
-    paddingTop: 20
+    paddingTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   jokeWrapper: {
     marginBottom: 50
@@ -41,6 +44,14 @@ export const styles = StyleSheet.create({
     color: colours.primary
   },
   actionsWrapper: {
-    marginTop: 150
+    marginTop: 100
+  },
+  savedJokesHeader: {
+    alignSelf: 'center',
+    fontFamily: 'Palanquin-SemiBold',
+    fontSize: 24
+  },
+  jokesWrapper: {
+    marginTop: 20
   }
 })
