@@ -11,6 +11,8 @@ const Fetch: React.FC = () => {
   const [isLoading, setLoading] = useState<boolean>(true)
   const [data, setData] = useState<Data>()
 
+  const [saved, setSaved] = useState<any[]>([])
+
   const getJokes = async () => {
     try {
       const response = await fetch(
@@ -18,6 +20,7 @@ const Fetch: React.FC = () => {
       )
       const jokes = await response.json()
       setData(jokes)
+      setSaved(oldArray => [jokes.jokes, ...oldArray])
     } catch (error) {
       console.error(error)
     } finally {
@@ -43,7 +46,7 @@ const Fetch: React.FC = () => {
     }
   }
 
-  storeData(data && data.jokes)
+  storeData(saved)
 
   useEffect(() => {
     async function getSavedJokes() {
