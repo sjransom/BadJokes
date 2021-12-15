@@ -1,27 +1,12 @@
-import React from 'react'
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
+import * as React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 
-import FetchData from './components/FetchData'
+import Home from './screens/Home'
 
-const App: React.FC = () => {
+export default function App() {
   return (
-    <SafeAreaView>
-      <ScrollView contentContainerStyle={styles.container}>
-        <View>
-          <Text>Bad Jokes</Text>
-        </View>
-        <FetchData />
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Home />
+    </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
-
-export default App
