@@ -45,6 +45,19 @@ export const Welcome = ({ navigation }) => {
           ]}>
           <Text style={styles.buttonText}>Play Game</Text>
         </Pressable>
+
+        <Pressable
+          onPress={() => {
+            navigation.navigate('SavedJokes')
+          }}
+          style={({ pressed }) => [
+            styles.button,
+            {
+              backgroundColor: pressed ? colours.accent : colours.secondary
+            }
+          ]}>
+          <Text style={styles.buttonText}>Saved Jokes</Text>
+        </Pressable>
       </View>
     </View>
   )

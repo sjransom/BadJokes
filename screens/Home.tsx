@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 Icon.loadFont()
 
-export const Home = () => {
+export const Home = ({ navigation }) => {
   const [like, setLike] = useState(false)
 
   return (
@@ -17,6 +17,12 @@ export const Home = () => {
       <SafeAreaView>
         <View style={styles.headerWrapper}>
           <Icon name="star" size={52} color={colours.secondary} />
+          <Pressable
+            onPress={() => {
+              navigation.navigate('Welcome')
+            }}>
+            <Icon name="close-outline" size={36} color={colours.secondary} />
+          </Pressable>
         </View>
       </SafeAreaView>
 
