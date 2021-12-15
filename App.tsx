@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+
+import Home from './screens/Home'
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Text>Bad Jokes</Text>
+      <Home />
     </NavigationContainer>
   )
 }
