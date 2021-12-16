@@ -3,7 +3,7 @@
 #### Nationwide Building Society Xmas Hackathon 16/12/21
 
 **Hackathon summary**:  
-Ho ho ho, Santa has written to Nationwide because he's worried people won't have enough fun on Christmas Day. He's asked us to come up with an idea which will enhance the Christmas Day experience using technology. You can use any tech you want (Santa's not fussy) and you should ideally be able to demo a working prototype at the end of the day so Santa can pick his favourite.
+*Ho ho ho, Santa has written to Nationwide because he's worried people won't have enough fun on Christmas Day. He's asked us to come up with an idea which will enhance the Christmas Day experience using technology. You can use any tech you want (Santa's not fussy) and you should ideally be able to demo a working prototype at the end of the day so Santa can pick his favourite.*
 
 **Our idea**:  
 Random cheese joke generator, with save function and 2 player game!
